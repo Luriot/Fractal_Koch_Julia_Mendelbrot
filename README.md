@@ -1,105 +1,105 @@
 
-# Fractals Visualization: Koch Snowflake, Julia Set, and Mandelbrot Set
+# Visualisation de Fractales : Flocon de Koch, Ensemble de Julia et Ensemble de Mandelbrot
 
-This project visualizes three fascinating mathematical fractals: the **Koch Snowflake**, the **Julia Set**, and the **Mandelbrot Set**. Each fractal is generated using Python and can be visualized individually or together in a combined view.
+Ce projet visualise trois fractales mathématiques fascinantes : le **Flocon de Koch**, l'**Ensemble de Julia** et l'**Ensemble de Mandelbrot**. Chaque fractale est générée à l'aide de Python et peut être visualisée individuellement ou ensemble dans une vue combinée.
 
-## Table of Contents
+## Table des Matières
 
-- [Overview](#overview)
-- [Features](#features)
-- [Requirements](#requirements)
+- [Aperçu](#aperçu)
+- [Fonctionnalités](#fonctionnalités)
+- [Prérequis](#prérequis)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Examples](#examples)
-- [License](#license)
+- [Utilisation](#utilisation)
+- [Exemples](#exemples)
+- [Licence](#licence)
 
-## Overview
+## Aperçu
 
-Fractals are infinitely complex patterns that are self-similar across different scales. This project provides an interactive way to explore these fractals:
+Les fractales sont des motifs infiniment complexes qui sont auto-similaires à différentes échelles. Ce projet fournit un moyen interactif d'explorer ces fractales :
 
-1. **Koch Snowflake**: A recursively generated geometric fractal.
-2. **Julia Set**: A set of complex numbers that generate beautiful patterns.
-3. **Mandelbrot Set**: The iconic fractal set representing complex numbers under iteration.
+1. **Flocon de Koch** : Une fractale géométrique générée récursivement.
+2. **Ensemble de Julia** : Un ensemble de nombres complexes qui génèrent de magnifiques motifs.
+3. **Ensemble de Mandelbrot** : L'ensemble fractal emblématique représentant des nombres complexes sous itération.
 
-## Features
+## Fonctionnalités
 
-- Visualize the **Koch Snowflake** up to a customizable recursion depth.
-- Generate the **Julia Set** for any given complex constant.
-- Render the **Mandelbrot Set** with adjustable resolution and iteration limits.
-- Display all fractals together in a single plot for comparison.
-- Interactive visualizations using **Plotly** for individual fractals.
+- Visualisez le **Flocon de Koch** avec une profondeur de récursion personnalisable.
+- Générez l'**Ensemble de Julia** pour une constante complexe donnée.
+- Rendez l'**Ensemble de Mandelbrot** avec une résolution et des limites d'itération ajustables.
+- Affichez toutes les fractales ensemble dans un seul graphique pour les comparer.
+- Visualisations interactives utilisant **Plotly** pour chaque fractale.
 
-## Requirements
+## Prérequis
 
-Ensure you have the following installed:
+Assurez-vous d'avoir les éléments suivants installés :
 
-- Python 3.7 or higher
-- Required libraries (install with `pip`):
+- Python 3.7 ou supérieur
+- Bibliothèques nécessaires (installez-les avec `pip`) :
   - `numpy`
   - `matplotlib`
   - `plotly`
 
 ## Installation
 
-1. Clone the repository:
+1. Clonez le dépôt :
    ```bash
    git clone https://github.com/Luriot/Fractal_Koch_Julia_Mendelbrot.git
    cd Fractal_Koch_Julia_Mendelbrot
    ```
 
-2. Install dependencies:
+2. Installez les dépendances :
    ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
+## Utilisation
 
-Run the script to generate and visualize the fractals:
+Exécutez le script pour générer et visualiser les fractales :
 
 ```bash
 python fractal.py
 ```
 
-### Parameters
+### Paramètres
 
-You can modify the fractal parameters directly in the script:
+Vous pouvez modifier les paramètres des fractales directement dans le script :
 
-- **Koch Snowflake**:
-  - `order`: Recursion depth (default: 10)
-- **Julia Set**:
-  - `julia_c`: Complex constant (default: `-0.7 + 0.27015j`)
-  - `julia_resolution`: Resolution of the grid (default: 3000)
-  - `julia_iterations`: Maximum iterations (default: 500)
-- **Mandelbrot Set**:
-  - `mandelbrot_resolution`: Resolution of the grid (default: 3000)
-  - `mandelbrot_iterations`: Maximum iterations (default: 500)
+- **Flocon de Koch** :
+  - `order` : Profondeur de récursion (par défaut : 10)
+- **Ensemble de Julia** :
+  - `julia_c` : Constante complexe (par défaut : `-0.7 + 0.27015j`)
+  - `julia_resolution` : Résolution de la grille (par défaut : 3000)
+  - `julia_iterations` : Itérations maximales (par défaut : 500)
+- **Ensemble de Mandelbrot** :
+  - `mandelbrot_resolution` : Résolution de la grille (par défaut : 3000)
+  - `mandelbrot_iterations` : Itérations maximales (par défaut : 500)
 
-## Examples
+## Exemples
 
-### Combined View
+### Vue Combinée
 
-Displays all three fractals side by side:
+Affiche les trois fractales côte à côte :
 
-![Combined Fractals Example](assets/combined_fractals.png)
+![Exemple de Fractales Combinées](assets/combined_fractals.png)
 
-### Koch Snowflake
+### Flocon de Koch
 
-Visualizes the Koch Snowflake at the specified recursion depth:
+Visualise le Flocon de Koch à la profondeur de récursion spécifiée :
 
-![Koch Snowflake Example](assets/koch_snowflake.png)
+![Exemple de Flocon de Koch](assets/koch_snowflake.png)
 
-### Julia Set
+### Ensemble de Julia
 
-Generates the Julia Set for a given complex constant:
+Génère l'Ensemble de Julia pour une constante complexe donnée :
 
-![Julia Set Example](assets/julia_set.png)
+![Exemple d'Ensemble de Julia](assets/julia_set.png)
 
-### Mandelbrot Set
+### Ensemble de Mandelbrot
 
-Renders the Mandelbrot Set with the specified resolution and iterations:
+Rend l'Ensemble de Mandelbrot avec la résolution et les itérations spécifiées :
 
-![Mandelbrot Set Example](assets/mandelbrot_set.png)
+![Exemple d'Ensemble de Mandelbrot](assets/mandelbrot_set.png)
 
-## License
+## Licence
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus de détails.
