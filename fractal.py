@@ -16,7 +16,7 @@ mandelbrot_resolution = 3000  # Résolution (pixels par dimension)
 mandelbrot_iterations = 500  # Nombre maximum d'itérations
 
 
-# === FONCTIONS ===
+# === FONCTIONS FRACTALES ===
 def koch_snowflake(order):
     def koch_segment(p1, p2):
         delta = (p2 - p1) / 3
@@ -75,34 +75,41 @@ def mandelbrot_set(resolution, max_iter):
     return fractal, x, y
 
 
-# === VISUALISATION FUNCTIONS ===
+# === FONCTIONS DE VISUALISATION ===
 def display_koch_snowflake(points):
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=points[:, 0], y=points[:, 1], mode='lines', line=dict(color='black')))
-    fig.update_layout(title=f"Flocon de Koch (Ordre {order})", xaxis_title="X", yaxis_title="Y", showlegend=False)
-    fig.show()
+    fig.update_layout(
+        title=f"Flocon de Koch (Ordre {order})",
+        xaxis_title="X",
+        yaxis_title="Y",
+        showlegend=False,
+        xaxis=dict(scaleratio=1),
+        yaxis=dict(scaleratio=1)
+    )
+    fig.show(config={"scrollZoom": True})
 
 
 def display_julia_set(fractal, x, y):
     fig = go.Figure(data=go.Heatmap(z=fractal, x=x, y=y, colorscale='Inferno'))
     fig.update_layout(
         title="Ensemble de Julia",
-        xaxis=dict(title="Re"),
-        yaxis=dict(title="Im"),
+        xaxis=dict(title="Re", scaleratio=1),
+        yaxis=dict(title="Im", scaleratio=1),
         coloraxis_colorbar=dict(title="Itérations")
     )
-    fig.show()
+    fig.show(config={"scrollZoom": True})
 
 
 def display_mandelbrot_set(fractal, x, y):
     fig = go.Figure(data=go.Heatmap(z=fractal, x=x, y=y, colorscale='Hot'))
     fig.update_layout(
         title="Fractale de Mandelbrot",
-        xaxis=dict(title="Re"),
-        yaxis=dict(title="Im"),
+        xaxis=dict(title="Re", scaleratio=1),
+        yaxis=dict(title="Im", scaleratio=1),
         coloraxis_colorbar=dict(title="Itérations")
     )
-    fig.show()
+    fig.show(config={"scrollZoom": True})
 
 
 def three_in_one_graph(koch_points, julia_data, mandelbrot_data):
@@ -133,22 +140,22 @@ def three_in_one_graph(koch_points, julia_data, mandelbrot_data):
 
 
 # === CALCULS ET EXÉCUTION ===
-# Precompute fractals
+# Calcul des fractales
 koch_points = koch_snowflake(order)
-print("Koch snowflake points calculated.")
+print("Le flocon de Koch est calculé.")
 julia_data = julia_set(julia_c, julia_resolution, julia_iterations)
-print("Julia set data calculated.")
+print("L'ensemble de Julia est calculé.")
 mandelbrot_data = mandelbrot_set(mandelbrot_resolution, mandelbrot_iterations)
-print("Mandelbrot set data calculated.")
+print("La fractale de Mandelbrot est calculé.")
 
-# Combined graph
+# Graph combiné des trois visualisations
 three_in_one_graph(koch_points, julia_data, mandelbrot_data)
-print("Combined graph displayed.")
+print("Graphique combiné affiché.")
 
-# Individual visualizations
+# Visualisation individuelle
 display_koch_snowflake(koch_points)
-print("Koch snowflake displayed.")
+print("Flocon de Koch affiché.")
 display_julia_set(*julia_data)
-print("Julia set displayed.")
+print("Ensemble de Julia affiché.")
 display_mandelbrot_set(*mandelbrot_data)
-print("Mandelbrot set displayed.")
+print("Fractale de Mandelbrot affichée.")
